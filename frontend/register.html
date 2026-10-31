@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Spendly</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <h1>Create account</h1>
+      <p class="muted">Start managing your expenses.</p>
+
+      <form id="registerForm">
+        <label>Name</label>
+        <input id="name" required minlength="2"
+               placeholder="Your name">
+
+        <label>Email</label>
+        <input id="email" type="email" required
+               placeholder="you@example.com">
+
+        <label>Password</label>
+        <input id="password" type="password"
+               minlength="8" required
+               placeholder="Minimum 8 characters">
+
+        <button class="primary-btn" type="submit">
+          Create account
+        </button>
+
+        <p id="message" role="status"></p>
+      </form>
+
+      <p class="muted">
+        Already have an account?
+        <a href="login.html">Login</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

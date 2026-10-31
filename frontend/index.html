@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spendly — Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar-actions">
+    <button id="themeToggle" class="theme-toggle">
+        <span id="themeIcon">☾</span>
+        <span id="themeLabel">Dark mode</span>
+    </button>
+
+    <button id="logoutBtn" class="theme-toggle" type="button">
+        🚪 Logout
+    </button>
+</div>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-icon">S</span>
+        <span>spendly<span class="dot">.</span></span>
+      </a>
+
+      <p class="nav-label">WORKSPACE</p>
+      <a href="#dashboard" class="nav-item active">▦ <span>Dashboard</span></a>
+      <a href="#expenses" class="nav-item">↗ <span>Expenses</span></a>
+
+      <div class="sidebar-bottom">
+        <div class="tip">
+          <span>✦ Smart tip</span>
+          <p>Small savings today can make a big difference tomorrow.</p>
+        </div>
+        <p class="muted">PERSONAL FINANCE</p>
+      </div>
+    </aside>
+
+    <main class="main" id="dashboard">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR MONEY, YOUR CONTROL</p>
+          <h1>Dashboard</h1>
+          <p class="muted">Track your spending, one day at a time.</p>
+        </div>
+      </header>
+
+      <section class="welcome">
+        <div>
+          <p class="welcome-label">YOUR FINANCES AT A GLANCE</p>
+          <h2>Spend smarter. Live better.</h2>
+          <p>Every expense tells a story. Make yours count.</p>
+        </div>
+        <div class="welcome-symbol">₹</div>
+      </section>
+
+      <section class="stats">
+        <article class="stat-card">
+          <div class="stat-top">
+            <span class="stat-label">Total spent</span>
+            <span class="stat-icon purple">₹</span>
+          </div>
+          <h2 id="total">₹0.00</h2>
+          <p class="muted">Across all recorded expenses</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-top">
+            <span class="stat-label">Transactions</span>
+            <span class="stat-icon blue">↗</span>
+          </div>
+          <h2 id="count">0</h2>
+          <p class="muted">Expenses recorded</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-top">
+            <span class="stat-label">Top category</span>
+            <span class="stat-icon orange">◈</span>
+          </div>
+          <h2 id="topCategory">—</h2>
+          <p class="muted">Based on total spending</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel form-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Add expense</h2>
+              <p class="muted">Record where your money goes.</p>
+            </div>
+            <span class="heading-icon">＋</span>
+          </div>
+
+          <form id="expenseForm">
+            <label for="title">Expense name</label>
+            <input id="title" placeholder="e.g. Groceries" required maxlength="100">
+
+            <div class="field-row">
+              <div>
+                <label for="amount">Amount (₹)</label>
+                <input id="amount" type="number" min="0.01"
+                       step="0.01" placeholder="0.00" required>
+              </div>
+              <div>
+                <label for="category">Category</label>
+                <select id="category" required>
+                  <option value="">Choose</option>
+                  <option>Food</option>
+                  <option>Travel</option>
+                  <option>Shopping</option>
+                  <option>Education</option>
+                  <option>Vegetable</option>
+                  <option>Bills</option>
+                  <option>Health</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="description">Description <span class="optional">Optional</span></label>
+            <textarea id="description" rows="3"
+                      placeholder="Add a note..."></textarea>
+
+            <button class="primary-btn" id="submitBtn" type="submit">
+              + Add expense
+            </button>
+            <p id="message" role="status" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <article class="panel expenses-panel" id="expenses">
+          <div class="panel-heading">
+            <div>
+              <h2>Recent expenses</h2>
+              <p class="muted">Your latest transactions.</p>
+            </div>
+            <button class="refresh-btn" id="refreshBtn" type="button"
+                    title="Refresh expenses">↻</button>
+          </div>
+
+          <div id="expenseList" class="expense-list">
+            <p class="muted">Loading expenses...</p>
+          </div>
+        </article>
+      </section>
+
+      <footer>Spendly · Simple finances, clearer decisions.</footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
