@@ -1,5 +1,5 @@
 
-const API = "http://127.0.0.1:8000";
+const API = "https://expense-tracker-gg9y.onrender.com";
 
 const registerForm = document.getElementById("registerForm");
 const loginForm = document.getElementById("loginForm");
